@@ -27,6 +27,8 @@ namespace ComputerGeometry
         int num = 1;
         bool flag_y = true;
         float y_last = 0;
+        public static List<List<Node>> Lines=new List<List<Node>>();
+
 
         public Form1()
         {
@@ -51,6 +53,8 @@ namespace ComputerGeometry
                 AllNodes.Clear();
                 EventNodes.Clear();
                 num = 1;
+                flag_y = true;
+                y_last = 0;
                 return;
             }
             else if ((y < y_last) && flag_y)
@@ -132,13 +136,17 @@ namespace ComputerGeometry
                 if (checkNode.flag != nodes2.flag)
                 {
                     //不包括第一个和第二个
-
                     if (i == EventNodes.Count - 1)
                     {
 
                         for (int j = 1; j < VerNode.Count - 1; j++)
                         {
+                            List<Node> current_pair=new List<Node>();
                             mypen.drawNodeLine(g, checkNode, VerNode[j]);
+                            current_pair.Add(checkNode);
+                            current_pair.Add(VerNode[j]);
+                            Lines.Add(current_pair);
+
                             mypen.drawTriangle(g, checkNode, VerNode[j], VerNode[j - 1], color_flag);
                             color_flag = !color_flag;
                         }
@@ -151,7 +159,10 @@ namespace ComputerGeometry
 
                     for (int j = 1; j < VerNode.Count - 1; j++)
                     {
+                        List<Node> current_pair=new List<Node>();
                         mypen.drawNodeLine(g, checkNode, VerNode[j]);
+                        current_pair.Add(checkNode);
+                        current_pair.Add(VerNode[j]);
                         mypen.drawTriangle(g, checkNode, VerNode[j], VerNode[j - 1], color_flag);
                         color_flag = !color_flag;
                     }
@@ -166,6 +177,11 @@ namespace ComputerGeometry
                     funcs.ComputeAngle(node3, nodes2, checkNode, out flag);
                     if (flag)
                     {
+
+                        List<Node> current_pair=new List<Node>();
+                        current_pair.Add(checkNode);
+                        current_pair.Add(node3);
+
                         mypen.drawNodeLine(g, checkNode, node3);
                         mypen.drawTriangle(g, checkNode, node3, nodes2, color_flag);
                         color_flag = !color_flag;
@@ -207,6 +223,9 @@ namespace ComputerGeometry
             AllNodes.Clear();
             EventNodes.Clear();
             num = 1;
+            flag_y = true;
+            y_last = 0;
         }
+
     }
 }

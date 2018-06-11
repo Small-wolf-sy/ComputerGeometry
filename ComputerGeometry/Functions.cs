@@ -101,7 +101,13 @@ namespace MyFunctions
             double cosM = v1 / (ma_val * mb_val);
             double angleAMB = Math.Acos(cosM) * 180 / M_PI;
 
-            if (Math.Abs(angleAMB)<90)
+            if (second.data.X>cen.data.X)
+            {
+                angleAMB=360-angleAMB;
+            }
+
+            if (angleAMB < 180)
+            //if (angleAMB < 180)
             {
                 flag = true;
             }

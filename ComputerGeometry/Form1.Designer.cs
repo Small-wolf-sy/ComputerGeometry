@@ -64,7 +64,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button2.Location = new System.Drawing.Point(33, 213);
+            this.button2.Location = new System.Drawing.Point(33, 188);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(148, 50);
             this.button2.TabIndex = 2;
@@ -75,7 +75,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button3.Location = new System.Drawing.Point(33, 337);
+            this.button3.Location = new System.Drawing.Point(33, 283);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(148, 54);
             this.button3.TabIndex = 3;
@@ -86,9 +86,9 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button4.Location = new System.Drawing.Point(33, 466);
+            this.button4.Location = new System.Drawing.Point(33, 375);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(148, 39);
+            this.button4.Size = new System.Drawing.Size(148, 46);
             this.button4.TabIndex = 4;
             this.button4.Text = "清空";
             this.button4.UseVisualStyleBackColor = true;

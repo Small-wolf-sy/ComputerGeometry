@@ -64,7 +64,7 @@ namespace PenFunctions
 
         public void drawText(Graphics g,Point p,string s)
         {
-            Font newfont=new Font("微软雅黑",9);
+            Font newfont=new Font("微软雅黑",12);
             g.DrawString(s, newfont, Brushes.Black, p);
         }
 
