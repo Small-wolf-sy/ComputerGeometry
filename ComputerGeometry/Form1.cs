@@ -24,6 +24,9 @@ namespace ComputerGeometry
         public static List<Node> AllNodes = new List<Node>();
         public static List<Node> EventNodes = new List<Node>();
         Functions funcs = new Functions();
+        int num = 1;
+        bool flag_y = true;
+        float y_last = 0;
 
         public Form1()
         {
@@ -35,11 +38,34 @@ namespace ComputerGeometry
             Graphics g = PictureBoxShow.CreateGraphics();
             float x = e.X;
             float y = e.Y;
+            //如果保持下降趋势
+            if ((y>y_last)&&flag_y)
+            {
+                y_last = y;
+            }
+            else if ((y > y_last) && !flag_y)
+            {
+                MessageBox.Show("这不符合单调多边形规则，请重新绘制");
+                g.Clear(Color.White);
+                AllPoints.Clear();
+                AllNodes.Clear();
+                EventNodes.Clear();
+                num = 1;
+                return;
+            }
+            else if ((y < y_last) && flag_y)
+            {
+                y_last = y;
+                flag_y = false;
+            }
             Point p = new Point();
             p.X = Convert.ToInt32(x);
             p.Y = Convert.ToInt32(y);
             mypen.drawpoint(g, p);
+            string s = num.ToString()+"号点";
+            mypen.drawText(g, p, s);
             AllPoints.Add(p);
+            num = num + 1;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -74,6 +100,12 @@ namespace ComputerGeometry
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (EventNodes.Count == 0)
+            {
+                MessageBox.Show("请规划点再进行三角剖分！");
+                return;
+            }
+
             Graphics g = PictureBoxShow.CreateGraphics();
             bool flag;
             bool color_flag = true;
@@ -162,7 +194,7 @@ namespace ComputerGeometry
             //开始处理节点
             //起点位置
             funcs.ConvertNodes(AllPoints, out AllNodes, out TopNode);
-            funcs.ArrangeNodes(AllNodes, out EventNodes);
+            funcs.ArrangeNodes(AllNodes.ToList(), out EventNodes);
 
             mypen.DrawNodes(g, EventNodes);
         }
@@ -174,20 +206,7 @@ namespace ComputerGeometry
             AllPoints.Clear();
             AllNodes.Clear();
             EventNodes.Clear();
-
-            //Stack<Point> Test_Stack = new Stack<Point>();
-
-
-            //int[] x = new int[] { 10, 20, 26, 19, 15, 14, 5, 4, 3, 1 };
-            //int[] y = new int[] { 5, 21, 48, 65, 69, 75, 55, 37, 30, 15 };
-
-            //for (int i=0;i<x.Length;i++)
-            //{
-            //    Point p = new Point(x[i] * 15, y[i] * 5);
-            //    Test_Stack.Push(p);
-            //}
-            //Point p1=Test_Stack.Peek();
-            //mypen.drawpoint(g, p1);
+            num = 1;
         }
     }
 }

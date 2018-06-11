@@ -10,8 +10,8 @@ namespace PenFunctions
 {
     class PenFunction
     {
-        public static Pen pen1=new Pen(Color.Red,4);
-        public static Pen pen2 = new Pen(Color.Black, 4);
+        public static Pen pen1=new Pen(Color.Red,3);
+        public static Pen pen2 = new Pen(Color.Black, 3);
 
         //绘制点
         public void drawpoint(Graphics g, Point point)
@@ -21,7 +21,7 @@ namespace PenFunctions
         }
         public void drawLine(Graphics g,Point p1,Point p2)
         {
-            g.DrawLine(pen1, p1, p2);
+            g.DrawLine(pen2, p1, p2);
         }
         public void drawNodeLine(Graphics g,Node node1,Node node2)
         {
@@ -60,6 +60,12 @@ namespace PenFunctions
                 g.FillEllipse(Brushes.Blue, Nodes.data.X - 4, Nodes.data.Y - 4, 8, 8);
             }
 
+        }
+
+        public void drawText(Graphics g,Point p,string s)
+        {
+            Font newfont=new Font("微软雅黑",9);
+            g.DrawString(s, newfont, Brushes.Black, p);
         }
 
         public void DrawNodes(Graphics g,List<Node>Nodes)
