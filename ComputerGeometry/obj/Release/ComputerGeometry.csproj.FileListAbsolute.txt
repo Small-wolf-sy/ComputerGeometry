@@ -1,0 +1,9 @@
+F:\HomeworkOfComputerGeometry\ComputerGeometry\ComputerGeometry\bin\Release\ComputerGeometry.exe.config
+F:\HomeworkOfComputerGeometry\ComputerGeometry\ComputerGeometry\bin\Release\ComputerGeometry.exe
+F:\HomeworkOfComputerGeometry\ComputerGeometry\ComputerGeometry\bin\Release\ComputerGeometry.pdb
+F:\HomeworkOfComputerGeometry\ComputerGeometry\ComputerGeometry\obj\Release\ComputerGeometry.Form1.resources
+F:\HomeworkOfComputerGeometry\ComputerGeometry\ComputerGeometry\obj\Release\ComputerGeometry.Properties.Resources.resources
+F:\HomeworkOfComputerGeometry\ComputerGeometry\ComputerGeometry\obj\Release\ComputerGeometry.csproj.GenerateResource.Cache
+F:\HomeworkOfComputerGeometry\ComputerGeometry\ComputerGeometry\obj\Release\ComputerGeometry.exe
+F:\HomeworkOfComputerGeometry\ComputerGeometry\ComputerGeometry\obj\Release\ComputerGeometry.pdb
+F:\HomeworkOfComputerGeometry\ComputerGeometry\ComputerGeometry\obj\Release\ComputerGeometry.csprojResolveAssemblyReference.cache

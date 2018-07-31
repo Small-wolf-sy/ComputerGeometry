@@ -72,36 +72,6 @@ namespace ComputerGeometry
             num = num + 1;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-            int[] x = new int[] { 10, 20, 26, 19, 15, 14, 5, 4, 3, 1 };
-            int[] y = new int[] { 5, 21, 48, 65, 69, 75, 55, 37, 30, 15 };
-            Graphics g = PictureBoxShow.CreateGraphics();
-
-            for (int i = 0; i < x.Length; i++)
-            {
-                Point p = new Point(x[i] * 15, y[i] * 5);
-                //按单调排序
-                AllPoints.Add(p);
-                mypen.drawpoint(g, p);
-            }
-
-            //绘制线条
-            for (int i = 1; i <= AllPoints.Count - 1; i++)
-            {
-                mypen.drawLine(g, AllPoints[i], AllPoints[i - 1]);
-            }
-            mypen.drawLine(g, AllPoints[AllPoints.Count - 1], AllPoints[0]);
-
-            //开始处理节点
-            //起点位置
-            funcs.ConvertNodes(AllPoints, out AllNodes, out TopNode);
-            funcs.ArrangeNodes(AllNodes, out EventNodes);
-
-            mypen.DrawNodes(g, EventNodes);
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             if (EventNodes.Count == 0)
